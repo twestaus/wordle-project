@@ -1,6 +1,11 @@
 const NUM_ROUNDS = 6;
 const ANSWER_LENGTH = 5;
 const letters = document.querySelectorAll(".cell");
+const commentary = document.querySelector(".status");
+
+
+
+const jsConfetti = new JSConfetti()
 
 
 
@@ -14,11 +19,9 @@ async function init() {
     let currentGuess = "";
     let done = false;
     let isLoading = false;
+    commentary.innerText = `Can you guess at what todays word is? You have ${NUM_ROUNDS} attempts to see if you can. Good luck`
 
-    if(currentRow === NUM_ROUNDS) {
-        done = true
-console.log(word)
-    }
+    
 
     //get the word of the day and store it in a variable called word
     const url = "https://words.dev-apis.com/word-of-the-day?random=1";
@@ -80,6 +83,8 @@ console.log(word)
             }
             console.log('CORRECT!')
                 done = true;
+                commentary.innerText = "Congratulations You Guessed The Word"
+                jsConfetti.addConfetti()
             }
             // otherwise lets check if the word is a valid word to begin with
              else {
@@ -129,6 +134,15 @@ console.log(word)
                 }
             currentGuess="";
             currentRow++
+            if(currentRow === NUM_ROUNDS) {
+                done = true
+        commentary.innerText = `Oh no, you didn't get the word! It was ${word}. Better luck next time`
+        document.body.style.backgroundColor = "firebrick";
+            } else {
+                let attemptsLeft = NUM_ROUNDS - currentRow; 
+                commentary.innerText = `Try again. You have ${attemptsLeft} attempts left`
+            }
+            
             }
         }
 

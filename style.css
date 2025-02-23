@@ -57,3 +57,8 @@ color: slategrey;
   background-color: darkgray;
   color: black;
 }
+
+.status {
+  text-align: center;
+  color: #fff;
+}
