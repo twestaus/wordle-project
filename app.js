@@ -19,7 +19,7 @@ async function init() {
     let currentGuess = "";
     let done = false;
     let isLoading = false;
-    commentary.innerText = `Can you guess at what todays word is? You have ${NUM_ROUNDS} attempts to see if you can. Good luck`
+    commentary.innerText = `Can you guess at what the word is? You have ${NUM_ROUNDS} attempts to see if you can. Good luck`
 
     
 
