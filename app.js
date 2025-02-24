@@ -81,10 +81,16 @@ async function init() {
             for(let i = currentRow * ANSWER_LENGTH; i < currentRow * ANSWER_LENGTH + currentGuess.length; i++  ) {
                 letters[i].classList.add("correct");
             }
-            console.log('CORRECT!')
+            
                 done = true;
                 commentary.innerText = "Congratulations You Guessed The Word"
                 jsConfetti.addConfetti()
+                setTimeout(()=> {
+                    return jsConfetti.addConfetti()
+                },3000)
+                setTimeout(()=> {
+                    return jsConfetti.addConfetti()
+                },5000)
             }
             // otherwise lets check if the word is a valid word to begin with
              else {
