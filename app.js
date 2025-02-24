@@ -149,7 +149,7 @@ async function init() {
                     break;
                     case 2: commentary.innerText = `You have ${attemptsLeft} attempts left. Concentrate!`
                     break;
-                    case 1: commentary.innerText = `Last chance. I you have only ${attemptsLeft} shot, Mom's spaghetti`
+                    case 1: commentary.innerText = `Last chance. You have only ${attemptsLeft} shot, Mom's spaghetti`
                     break;
                 }
                 
