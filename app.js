@@ -140,7 +140,19 @@ async function init() {
         document.body.style.backgroundColor = "firebrick";
             } else {
                 let attemptsLeft = NUM_ROUNDS - currentRow; 
-                commentary.innerText = `Try again. You have ${attemptsLeft} attempts left`
+                switch(attemptsLeft) {
+                    case 5: commentary.innerText = `Try again. You still have ${attemptsLeft} attempts left`
+                    break;
+                    case 4: commentary.innerText = `That's not it either. Don't worry, you still have ${attemptsLeft} attempts left`
+                    break;
+                    case 3: commentary.innerText = `You have only ${attemptsLeft} attempts left. Come on you can do this`
+                    break;
+                    case 2: commentary.innerText = `You have ${attemptsLeft} attempts left. Concentrate!`
+                    break;
+                    case 1: commentary.innerText = `Last chance. I you have only ${attemptsLeft} shot, Mom's spaghetti`
+                    break;
+                }
+                
             }
             
             }
